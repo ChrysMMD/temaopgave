@@ -1,16 +1,167 @@
 ---
-
+import "../styles/global.css";
+import "../styles/reset.css";
+import MyImage from "../components/MyImage.astro";
+import Numbers from "../components/Numbers.astro";
+import Buttons from "../components/Buttons.astro";
+import Card from "../components/Card.astro";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <header></header>
+
+    <article class="tekst_header">
+      <div class="tekstboks">
+        <h1>Services</h1>
+        <h2>Creative Services For Boost Your Business Growth</h2>
+      </div>
+    </article>
+
+    <article class="vision">
+      <div class="tekst">
+        <h1>Our Vision</h1>
+        <h2>Turn your ideas into reality.</h2>
+        <p>
+          Capitalize on low hanging fruit to identify a ballpark value added
+          activity beta test. Override the digital divide with additional from
+          DevOps.
+        </p>
+        <ul>
+          <li>
+            Bring to the table win-win survival strategies to ensure proactive
+            domination. At the end of the day.
+          </li>
+          <li>
+            Capitalize on low hanging fruit to identify a ballpark value added
+            activity to beta test override the digital.
+          </li>
+        </ul>
+      </div>
+
+      <div class="billede">
+        <figure>
+          <MyImage
+            imagePath="../assets/billede.jpg"
+            altText="Gruppe af folk som står ved en computer"
+          />
+        </figure>
+      </div>
+    </article>
+
+    <article class="numbers">
+      <Numbers overskrift="1128+" tekst="Succesful Work" />
+      <Numbers overskrift="908+" tekst="Team member" />
+      <Numbers overskrift="258+" tekst="Happy Customers" />
+      <Numbers overskrift="564+" tekst="Creative Idea" />
+    </article>
+
+    <article class="growing">
+      <div class="flex">
+        <div class="tekst_container">
+          <h1>Growing with our clients</h1>
+          <h2>Our core values & principles</h2>
+          <h3>
+            Capitalize on low hanging fruit to identify a ballpark value added
+            activity beta test. Override the digital divide with additional from
+            DevOps.
+          </h3>
+        </div>
+
+        <Buttons variant="default-black" text="Keep in touch" />
+      </div>
+
+      <div class="cards">
+        <Card
+          icon="../../public/icons/layers.svg"
+          alt_tekst="layers"
+          overskrift="Creative Ideas"
+          ipsum="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam."
+        />
+        <Card
+          icon="../../public/icons/graph.svg"
+          alt_tekst="graf"
+          overskrift="Best Features"
+          ipsum="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        />
+        <Card
+          icon="../../public/icons/globe.svg"
+          alt_tekst="globus"
+          overskrift="Experience"
+          ipsum="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam."
+        />
+        <Card
+          icon="../../public/icons/wheel.svg"
+          alt_tekst="gear"
+          overskrift="Easy Solutions"
+          ipsum="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        />
+      </div>
+    </article>
+  </body>
 </html>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+  :root {
+    --square-pattern: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="red"><path d="M7.47662 4.02206C6.50635 3.05178 5.53232 2.07774 4.56205 1.10745C4.28482 0.83023 3.80905 0.83023 3.53183 1.10745C2.56155 2.07774 1.59128 3.04803 0.621002 4.02206C0.343781 4.29929 0.343781 4.77506 0.621002 5.05229C1.59128 6.02258 2.5653 6.99661 3.53558 7.9669C3.8128 8.24412 4.28857 8.24412 4.56579 7.9669C5.53607 6.99661 6.51009 6.02258 7.48037 5.05229C7.63022 4.90244 7.69016 4.73011 7.69016 4.56527C7.69016 4.55403 7.69016 4.54654 7.69016 4.5353C7.69016 4.52781 7.69016 4.51657 7.69016 4.50908C7.69016 4.34424 7.63022 4.17191 7.47662 4.02206ZM4.04881 6.41968C3.41944 5.79031 2.79382 5.16468 2.16445 4.5353C2.79382 3.90593 3.41944 3.2803 4.04881 2.65092C4.67818 3.2803 5.3038 3.90593 5.93317 4.5353C5.3038 5.16468 4.67818 5.79031 4.04881 6.41968Z"/></svg>');
+  }
+
+  figure {
+    position: relative;
+
+    &::before {
+      --square-count: 10;
+      z-index: -1;
+      content: "";
+      position: absolute;
+      inset: -30px -30px auto auto;
+      inline-size: calc(var(--square-count) * 1.34rem - 0.67rem);
+      aspect-ratio: 1;
+      background: linear-gradient(
+          135deg,
+          #be965d,
+          #976f40,
+          #c99b61,
+          #f0be7b,
+          #ffcb85,
+          #eebc79,
+          #c0935b,
+          #976f40
+        )
+        0 0 / 100% 100%;
+      mask:
+        var(--square-pattern) 0 0 / 1.34rem 1.34rem,
+        var(--square-pattern) 0.67rem 0.67rem / 1.34rem 1.34rem;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -1rem;
+      top: -1rem;
+      background: green;
+      width: 150px;
+      height: 100px;
+      border-radius: 10px;
+      z-index: -1;
+    }
+  }
+
+  @layer {
+    body {
+      min-height: 100svh;
+      font-family: system-ui, sans-serif;
+      display: grid;
+      place-content: center;
+    }
+  }
+</style>

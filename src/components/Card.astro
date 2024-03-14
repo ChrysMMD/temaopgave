@@ -1,0 +1,69 @@
+---
+import "../styles/global.css";
+import "../styles/reset.css";
+
+const { icon, alt_tekst, overskrift, ipsum } = Astro.props;
+---
+
+<article class="card">
+  <img src={icon} alt={alt_tekst} />
+  <div class="overskrift">{overskrift}</div>
+  <p>{ipsum}</p>
+  <div class="link">
+    <a href="#">Read More</a>
+    <img src="../icons/arrow.svg" alt="arrow" />
+  </div>
+</article>
+
+<style>
+  .overskrift {
+    color: #181818;
+    font-family: Cabin;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 116%; /* 1.45rem */
+    margin-top: 1.38rem;
+    margin-bottom: 0.62rem;
+  }
+
+  a {
+    color: #181818;
+    font-family: Cabin;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 116%; /* 1.45rem */
+    margin-top: 1.38rem;
+    margin-bottom: 0.62rem;
+    text-decoration: none;
+  }
+
+  .card {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 1.25rem;
+    padding: 2.25rem 1.4375rem;
+    flex: 1;
+  }
+
+  p {
+    margin-bottom: 1, 38rem;
+  }
+
+  img {
+    width: 3.29863rem;
+    height: 3.29863rem;
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .link img {
+    width: 0.81675rem;
+    height: 0.66825rem;
+  }
+</style>

@@ -1,0 +1,39 @@
+---
+import "../styles/global.css";
+import "../styles/reset.css";
+const { text, link, variant, target, navn } = Astro.props;
+---
+
+<button class={variant}>{text}</button>
+
+<style>
+  .default-black {
+    background-color: var(--primary-black);
+    color: var(--secondary-grey);
+    border-radius: 2.625em;
+    display: flex;
+    width: 10.4375rem;
+    height: 3.5rem;
+    padding: 0.9375rem 2.125rem;
+    align-items: center;
+    gap: 0.625rem;
+    flex-shrink: 0;
+  }
+
+  .default-black:hover {
+    background-color: var(--secondary-grey);
+    color: var(--primary-black);
+    border: 1px solid var(--primary-black);
+  }
+
+  .default-yellow {
+    background-color: var(--primary-yellow);
+    color: var(--primary-black);
+    border-radius: 20%;
+  }
+
+  .default-yellow:hover {
+    background-color: var(--primary-black);
+    color: var(--secondary-grey);
+  }
+</style>
